@@ -1,16 +1,9 @@
 <section>
-  <h1>{{ teamName }}</h1>
+  <ng-transclude></ng-transclude>
   <ul>
     <slothbear-player data-ng-repeat="player in players" data-player="player"></slothbear-player>
   </ul>
-  <p>Create a new player</p>
-  <form data-ng-submit="createPlayer(newPlayer)">
-    <label>Name
-      <input type="text" data-ng-model="newPlayer.name">
-    </label>
-    <label>Position
-      <input type="text" data-ng-model="newPlayer.position">
-    </label>
-    <button type="submit">Create Player</button>
-  </form>
+  <slothbear-add-player data-player="player">
+    <h4>Add a new Player</h4>
+  </slothbear-add-player>
 </section>

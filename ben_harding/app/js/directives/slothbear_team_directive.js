@@ -3,21 +3,20 @@ module.exports = function(app) {
     return {
       restrict: 'EAC',
       replace: true,
+      transclude: true,
       templateUrl: 'templates/team.html',
       scope: {
         players: '=',
         teamName: '@'
       },
       controller: function($scope) {
-        var newPlayer = {};
         this.firePlayer = function(player) {
           $scope.players.splice($scope.players.indexOf(player), 1);
         };
-      },
-      link: function(scope, element, attrs, controller) {
-        scope.createPlayer = function(newPlayer) {
-          if (newPlayer.name && newPlayer.position) {
-            scope.players.push(newPlayer);
+        this.addPlayer = function(player) {
+          if (player.name && player.position) {
+            $scope.players.push(player);
+            $scope.player = {};
           }
         };
       }

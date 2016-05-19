@@ -1,0 +1,10 @@
+<form data-ng-submit="addPlayer(player)">
+  <ng-transclude></ng-transclude>
+  <label>Name
+    <input type="text" data-ng-model="player.name">
+  </label>
+  <label>Position
+    <input type="text" data-ng-model="player.position">
+  </label>
+  <button type="submit">Create Player</button>
+</form>
