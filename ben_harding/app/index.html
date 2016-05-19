@@ -5,10 +5,14 @@
     <title>Fake Team</title>
   </head>
   <body data-ng-app="fakeApp">
-    <slothbear-team
-      data-team-name="FC Slothbear"
-      data-players="players">
-    </slothbeaer-team>
+    <main data-ng-controller="TeamsController as teamsCtrl">
+      <slothbear-team data-players="teamsCtrl.fcSlothbear">
+        <h2>FC Slothbear</h2>
+      </slothbear-team>
+      <slothbear-team data-players="teamsCtrl.filthyBears">
+        <h2>Filthy Bears</h2>
+      </slothbear-team>
+    </main>
     <script src="bundle.js"></script>
   </body>
 </html>
