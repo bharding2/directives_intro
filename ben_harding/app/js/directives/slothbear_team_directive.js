@@ -10,14 +10,13 @@ module.exports = function(app) {
         teamName: '@'
       },
       controller: function($scope) {
-        var newPlayer = {};
         this.firePlayer = function(player) {
           $scope.players.splice($scope.players.indexOf(player), 1);
         };
-        this.addPlayer = function(newPlayer) {
-          if (newPlayer.name && newPlayer.position) {
-            this.players.push(newPlayer);
-            newPlayer = {};
+        this.addPlayer = function(player) {
+          if (player.name && player.position) {
+            $scope.players.push(player);
+            $scope.player = {};
           }
         };
       }
