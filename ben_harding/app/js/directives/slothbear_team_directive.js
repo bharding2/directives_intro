@@ -14,11 +14,10 @@ module.exports = function(app) {
         this.firePlayer = function(player) {
           $scope.players.splice($scope.players.indexOf(player), 1);
         };
-      },
-      link: function(scope, element, attrs, controller) {
-        scope.createPlayer = function(newPlayer) {
+        this.addPlayer = function(newPlayer) {
           if (newPlayer.name && newPlayer.position) {
-            scope.players.push(newPlayer);
+            this.players.push(newPlayer);
+            newPlayer = {};
           }
         };
       }
